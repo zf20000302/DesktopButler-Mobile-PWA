@@ -154,7 +154,7 @@
       return;
     }
 
-    state.utterance = u;
+    state.utterance = u; // Keep a strong reference for Android Chrome.
     u.lang = "en-US";
     u.rate = 0.92;
     u.pitch = 1;

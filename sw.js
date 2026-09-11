@@ -17,17 +17,14 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
-  );
+  event.waitUntil(caches.keys().then(keys =>
+    Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+  ));
   self.clients.claim();
 });
 
 self.addEventListener("fetch", event => {
   if (event.request.method !== "GET") return;
-
   event.respondWith(
     fetch(event.request, {cache:"no-store"}).then(resp => {
       const clone = resp.clone();
@@ -35,8 +32,6 @@ self.addEventListener("fetch", event => {
         caches.open(CACHE).then(c => c.put(event.request, clone));
       }
       return resp;
-    }).catch(() =>
-      caches.match(event.request).then(x => x || caches.match("./index.html"))
-    )
+    }).catch(() => caches.match(event.request).then(x => x || caches.match("./index.html")))
   );
 });
