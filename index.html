@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f8fb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="小管家" />
+  <title>小管家 Mobile</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">DESKTOP BUTLER</div>
+        <h1 id="page-title">今天</h1>
+      </div>
+      <button id="install-btn" class="ghost small hidden">安裝 App</button>
+    </header>
+
+    <main id="view" class="view"></main>
+
+    <nav class="bottom-nav">
+      <button data-route="home" class="nav-btn active">
+        <span class="nav-icon">⌂</span><span>今天</span>
+      </button>
+      <button data-route="practice" class="nav-btn">
+        <span class="nav-icon">▣</span><span>集中</span>
+      </button>
+      <button data-route="commute" class="nav-btn">
+        <span class="nav-icon">▶</span><span>通勤</span>
+      </button>
+      <button data-route="progress" class="nav-btn">
+        <span class="nav-icon">◎</span><span>進度</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="./supabase_config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
