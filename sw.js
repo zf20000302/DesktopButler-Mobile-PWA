@@ -1,12 +1,13 @@
-const CACHE = "desktopbutler-mobile-v027";
+const CACHE = "desktopbutler-mobile-v028";
 const ASSETS = [
   "./",
   "./index.html",
-  "./styles.css?v=027",
-  "./app.js?v=027",
-  "./practice_fix_v027.js?v=027",
-  "./tts_v026.js?v=027",
-  "./supabase_config.js?v=027",
+  "./styles.css?v=028",
+  "./app.js?v=028",
+  "./practice_fix_v027.js?v=028",
+  "./tts_v026.js?v=028",
+  "./navigation_fix_v028.js?v=028",
+  "./supabase_config.js?v=028",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
